@@ -72,11 +72,11 @@
   --spacing-24: 6rem;     /* 96px */
   
   /* Border Radius */
-  --radius-sm: 0.25rem;   /* 4px */
-  --radius-md: 0.375rem;  /* 6px */
-  --radius-lg: 0.5rem;    /* 8px */
-  --radius-xl: 0.75rem;   /* 12px */
-  --radius-2xl: 1rem;     /* 16px */
+  --radius-sm: 0.5rem;   /* 4px */
+  --radius-md: 0.75rem;  /* 6px */
+  --radius-lg: 1rem;    /* 8px */
+  --radius-xl: 1.5rem;   /* 12px */
+  --radius-2xl: 2rem;     /* 16px */
   --radius-full: 9999px;
   
   /* Shadows */
@@ -89,6 +89,7 @@
   --transition-fast: 150ms ease-in-out;
   --transition-medium: 300ms ease-in-out;
   --transition-slow: 500ms ease-in-out;
+  transition: border-radius 0.3s ease-in-out;
   
   /* Z-Index Scale */
   --z-dropdown: 1000;

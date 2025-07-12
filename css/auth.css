@@ -486,4 +486,16 @@
   .password-toggle {
     transition: none;
   }
+.auth-card,
+.item-card,
+.category-card,
+.card,
+.stat-item,
+.filters-sidebar,
+.featured-section,
+.browse-header,
+.browse-content {
+  border-radius: var(--radius-2xl);
+}
+
 }
