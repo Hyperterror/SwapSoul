@@ -45,42 +45,40 @@ class AuthManager {
     });
   }
 
-  async handleLogin(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    const data = {
-      email: formData.get('email'),
-      password: formData.get('password')
-    };
+ async handleLogin(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const formData = new FormData(form);
+  const email = formData.get('email');
+  const password = formData.get('password');
 
-    // Validate form
-    if (!this.validateLoginForm(data)) {
+  // Validate form
+  if (!this.validateLoginForm({ email, password })) {
+    return;
+  }
+
+  this.setFormLoading(form, true);
+
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+    
+    if (!user.emailVerified) {
+      await sendEmailVerification(user);
+      this.showError('Please verify your email first. We sent a new verification link.');
       return;
     }
 
-    // Show loading state
-    this.setFormLoading(form, true);
-
-    try {
-      // Simulate API call
-      await this.simulateApiCall(2000);
-      
-      // Success
-      this.showSuccess('Login successful! Welcome back.');
-      
-      // Redirect to home page
-      setTimeout(() => {
-        showPage('home');
-      }, 1500);
-      
-    } catch (error) {
-      this.showError('Invalid email or password. Please try again.');
-    } finally {
-      this.setFormLoading(form, false);
-    }
+    this.showSuccess('Login successful! Welcome back.');
+    setTimeout(() => showPage('home'), 1500);
+    
+  } catch (error) {
+    this.handleAuthError(error);
+  } finally {
+    this.setFormLoading(form, false);
   }
+}
 
   async handleRegister(e) {
     e.preventDefault();
@@ -447,6 +445,24 @@ class AuthManager {
         }
       }, delay);
     });
+  }
+}
+// Add to initializeEventListeners()
+const forgotLink = document.querySelector('.forgot-link');
+if (forgotLink) {
+  forgotLink.addEventListener('click', this.handleForgotPassword.bind(this));
+}
+
+async handleForgotPassword(e) {
+  e.preventDefault();
+  const email = prompt('Please enter your email address:');
+  if (!email) return;
+  
+  try {
+    await sendPasswordResetEmail(auth, email);
+    this.showSuccess('Password reset email sent! Check your inbox.');
+  } catch (error) {
+    this.handleAuthError(error);
   }
 }
 

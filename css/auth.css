@@ -487,3 +487,259 @@
     transition: none;
   }
 }
+/* Authentication Styles with Firebase Integration */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--spacing-4);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+.auth-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.auth-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  background-size: 200px 200px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.auth-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+}
+
+.auth-card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-6);
+}
+
+.auth-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-2);
+  line-height: var(--line-height-tight);
+}
+
+.auth-subtitle {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+/* Firebase-specific UI states */
+.firebaseui-container {
+  margin-bottom: var(--spacing-6);
+}
+
+.firebaseui-idp-button {
+  min-height: 48px;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: none !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.firebaseui-idp-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.firebaseui-idp-google {
+  background-color: #fff !important;
+  border: 2px solid var(--color-gray-200) !important;
+}
+
+.firebaseui-idp-facebook {
+  background-color: #1877f2 !important;
+  border: 2px solid #1877f2 !important;
+}
+
+.firebaseui-idp-text {
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.firebaseui-idp-icon-wrapper {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.firebaseui-tos {
+  display: none !important;
+}
+
+/* Loading states for Firebase operations */
+.auth-button.firebase-loading .spinner {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error states specific to Firebase errors */
+.firebase-error {
+  color: var(--color-error);
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.firebase-error-icon {
+  flex-shrink: 0;
+}
+
+/* Success states */
+.firebase-success {
+  color: var(--color-success);
+  background-color: rgba(74, 222, 128, 0.1);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* Password reset specific styles */
+.password-reset-container {
+  display: none;
+}
+
+.password-reset-container.active {
+  display: block;
+}
+
+.password-reset-success {
+  text-align: center;
+  padding: var(--spacing-4);
+}
+
+/* Email verification styles */
+.email-verification {
+  text-align: center;
+  padding: var(--spacing-4);
+  background-color: rgba(59, 130, 246, 0.1);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+}
+
+.email-verification p {
+  margin-bottom: var(--spacing-2);
+}
+
+/* The rest of your existing styles remain the same */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.form-label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.025em;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: var(--spacing-3);
+  color: var(--color-gray-400);
+  z-index: 1;
+  transition: color var(--transition-fast);
+}
+
+/* ... rest of your existing CSS rules ... */
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .auth-container {
+    padding: var(--spacing-2);
+  }
+  
+  .auth-card {
+    padding: var(--spacing-6);
+  }
+  
+  .auth-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .firebaseui-idp-list {
+    flex-direction: column;
+  }
+  
+  .firebaseui-idp-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
