@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapSoul - Community Clothing Exchange</title>
+    <meta name="description" content="Join SwapSoul's sustainable fashion community. Exchange, discover, and share pre-loved clothing while building a more sustainable wardrobe.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/auth.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♻️</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <span class="logo-icon">♻️</span>
+                    <span class="logo-text">SwapSoul</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop" aria-label="Main navigation">
+                    <a href="#" class="nav-link" data-page="home">Home</a>
+                    <a href="#" class="nav-link" data-page="browse">Browse</a>
+                    <a href="#" class="nav-link" data-page="categories">Categories</a>
+                    <a href="#" class="nav-link" data-page="community">Community</a>
+                </nav>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="search" placeholder="Search sustainable fashion..." class="search-input" aria-label="Search items">
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <button class="icon-button" aria-label="Notifications">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="icon-button" aria-label="Messages">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="btn btn-outline" data-page="login">Sign In</button>
+                    <button class="btn btn-primary" data-page="register">Sign Up</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" aria-label="Mobile navigation">
+            <div class="nav-mobile-content">
+                <a href="#" class="nav-mobile-link" data-page="home">Home</a>
+                <a href="#" class="nav-mobile-link" data-page="browse">Browse</a>
+                <a href="#" class="nav-mobile-link" data-page="categories">Categories</a>
+                <a href="#" class="nav-mobile-link" data-page="community">Community</a>
+                <div class="nav-mobile-actions">
+                    <button class="btn btn-outline" data-page="login">Sign In</button>
+                    <button class="btn btn-primary" data-page="register">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Page -->
+        <div class="page active" id="home-page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-background">
+                    <div class="hero-pattern"></div>
+                </div>
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">
+                                Sustainable Fashion
+                                <span class="highlight">Community</span>
+                            </h1>
+                            <p class="hero-subtitle">
+                                Join thousands of fashion lovers exchanging pre-loved clothing. 
+                                Build your dream wardrobe while protecting our planet.
+                            </p>
+                            <div class="hero-actions">
+                                <button class="btn btn-primary btn-large" data-page="browse">
+                                    Start Browsing
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="btn btn-outline btn-large" data-page="register">
+                                    Join Community
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="15000">0</div>
+                                <div class="stat-label">Items Exchanged</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="8500">0</div>
+                                <div class="stat-label">Community Members</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="2300">0</div>
+                                <div class="stat-label">CO₂ Saved (kg)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Items -->
+            <section class="featured-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Featured Items</h2>
+                        <p class="section-subtitle">Discover amazing pieces from our community</p>
+                        <button class="btn btn-outline" data-page="browse">View All</button>
+                    </div>
+                    <div class="featured-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="featured-track">
+                                <!-- Items will be loaded dynamically -->
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" aria-label="Previous items">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-next" aria-label="Next items">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section class="categories-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Shop by Category</h2>
+                        <p class="section-subtitle">Find exactly what you're looking for</p>
+                    </div>
+                    <div class="categories-grid" id="categories-grid">
+                        <!-- Categories will be loaded dynamically -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Browse Page -->
+        <div class="page" id="browse-page">
+            <div class="container">
+                <div class="browse-header">
+                    <h1 class="page-title">Browse Items</h1>
+                    <div class="browse-controls">
+                        <div class="filters-toggle">
+                            <button class="btn btn-outline" id="filters-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"></polygon>
+                                </svg>
+                                Filters
+                            </button>
+                        </div>
+                        <div class="sort-dropdown">
+                            <select class="sort-select" aria-label="Sort items">
+                                <option value="newest">Newest First</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="browse-content">
+                    <aside class="filters-sidebar" id="filters-sidebar">
+                        <div class="filters-content">
+                            <h3 class="filters-title">Filters</h3>
+                            
+                            <div class="filter-group">
+                                <h4 class="filter-label">Category</h4>
+                                <div class="filter-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="tops">
+                                        <span class="checkmark"></span>
+                                        Tops
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="bottoms">
+                                        <span class="checkmark"></span>
+                                        Bottoms
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="dresses">
+                                        <span class="checkmark"></span>
+                                        Dresses
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="outerwear">
+                                        <span class="checkmark"></span>
+                                        Outerwear
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4 class="filter-label">Size</h4>
+                                <div class="filter-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="xs">
+                                        <span class="checkmark"></span>
+                                        XS
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="s">
+                                        <span class="checkmark"></span>
+                                        S
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="m">
+                                        <span class="checkmark"></span>
+                                        M
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="l">
+                                        <span class="checkmark"></span>
+                                        L
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="xl">
+                                        <span class="checkmark"></span>
+                                        XL
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4 class="filter-label">Condition</h4>
+                                <div class="filter-options">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="new">
+                                        <span class="checkmark"></span>
+                                        Like New
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="excellent">
+                                        <span class="checkmark"></span>
+                                        Excellent
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="good">
+                                        <span class="checkmark"></span>
+                                        Good
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="items-grid-container">
+                        <div class="items-grid" id="items-grid">
+                            <!-- Items will be loaded dynamically -->
+                        </div>
+                        <div class="loading-indicator" id="loading-indicator">
+                            <div class="spinner"></div>
+                            <p>Loading more items...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Page -->
+        <div class="page" id="login-page">
+            <div class="auth-container">
+                <div class="auth-background">
+                    <div class="auth-pattern"></div>
+                </div>
+                
+                <div class="auth-content">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <div class="auth-logo">
+                                <span class="logo-icon">♻️</span>
+                                <span class="logo-text">SwapSoul</span>
+                            </div>
+                            <h1 class="auth-title">Welcome back</h1>
+                            <p class="auth-subtitle">Sign in to continue your sustainable fashion journey</p>
+                        </div>
+                        
+                        <form class="auth-form" id="login-form" novalidate>
+                            <div class="form-group">
+                                <label for="login-email" class="form-label">Email address</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    <input type="email" id="login-email" name="email" class="form-input" placeholder="Enter your email" autocomplete="email" required>
+                                </div>
+                                <span class="error-message" id="login-email-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="login-password" class="form-label">Password</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <circle cx="12" cy="16" r="1"></circle>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                    <input type="password" id="login-password" name="password" class="form-input" placeholder="Enter your password" autocomplete="current-password" required>
+                                    <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                        <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <span class="error-message" id="login-password-error"></span>
+                            </div>
+
+                            <div class="form-options">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" class="checkbox">
+                                    <span class="checkbox-label">Remember me</span>
+                                </label>
+                                <a href="#" class="forgot-link">Forgot password?</a>
+                            </div>
+
+                            <button type="submit" class="auth-button primary">
+                                <span class="button-text">Sign in</span>
+                                <svg class="button-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9,18 15,12 9,6"></polyline>
+                                </svg>
+                                <div class="spinner" style="display: none;"></div>
+                            </button>
+
+                            <div class="auth-divider">
+                                <span>or continue with</span>
+                            </div>
+
+                            <div class="social-buttons">
+                                <button type="button" class="social-button">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                    </svg>
+                                    Google
+                                </button>
+                                <button type="button" class="social-button">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                    Facebook
+                                </button>
+                            </div>
+
+                            <p class="auth-footer">
+                                Don't have an account? 
+                                <a href="#" class="auth-link" data-page="register">Sign up</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Page -->
+        <div class="page" id="register-page">
+            <div class="auth-container">
+                <div class="auth-background">
+                    <div class="auth-pattern"></div>
+                </div>
+                
+                <div class="auth-content">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <div class="auth-logo">
+                                <span class="logo-icon">♻️</span>
+                                <span class="logo-text">SwapSoul</span>
+                            </div>
+                            <h1 class="auth-title">Join SwapSoul</h1>
+                            <p class="auth-subtitle">Create your account and start building a sustainable wardrobe</p>
+                        </div>
+                        
+                        <form class="auth-form" id="register-form" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="register-firstName" class="form-label">First name</label>
+                                    <div class="input-wrapper">
+                                        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <input type="text" id="register-firstName" name="firstName" class="form-input" placeholder="First name" autocomplete="given-name" required>
+                                    </div>
+                                    <span class="error-message" id="register-firstName-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="register-lastName" class="form-label">Last name</label>
+                                    <div class="input-wrapper">
+                                        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                        <input type="text" id="register-lastName" name="lastName" class="form-input" placeholder="Last name" autocomplete="family-name" required>
+                                    </div>
+                                    <span class="error-message" id="register-lastName-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-email" class="form-label">Email address</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    <input type="email" id="register-email" name="email" class="form-input" placeholder="Enter your email" autocomplete="email" required>
+                                </div>
+                                <span class="error-message" id="register-email-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-password" class="form-label">Password</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <circle cx="12" cy="16" r="1"></circle>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                    <input type="password" id="register-password" name="password" class="form-input" placeholder="Create a password" autocomplete="new-password" required>
+                                    <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                        <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="password-strength" id="password-strength" style="display: none;">
+                                    <div class="strength-bar">
+                                        <div class="strength-fill" id="strength-fill"></div>
+                                    </div>
+                                    <span class="strength-label" id="strength-label">Weak</span>
+                                </div>
+                                <span class="error-message" id="register-password-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="register-confirmPassword" class="form-label">Confirm password</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <circle cx="12" cy="16" r="1"></circle>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                    <input type="password" id="register-confirmPassword" name="confirmPassword" class="form-input" placeholder="Confirm your password" autocomplete="new-password" required>
+                                    <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                        <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <span class="error-message" id="register-confirmPassword-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" name="agreeToTerms" class="checkbox" required>
+                                    <span class="checkbox-label">
+                                        I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a>
+                                    </span>
+                                </label>
+                                <span class="error-message" id="register-terms-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" name="subscribeNewsletter" class="checkbox" checked>
+                                    <span class="checkbox-label">
+                                        Subscribe to our newsletter for sustainable fashion tips and community updates
+                                    </span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="auth-button primary">
+                                <span class="button-text">Create account</span>
+                                <svg class="button-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9,18 15,12 9,6"></polyline>
+                                </svg>
+                                <div class="spinner" style="display: none;"></div>
+                            </button>
+
+                            <div class="auth-divider">
+                                <span>or sign up with</span>
+                            </div>
+
+                            <div class="social-buttons">
+                                <button type="button" class="social-button">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                    </svg>
+                                    Google
+                                </button>
+                                <button type="button" class="social-button">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                    Facebook
+                                </button>
+                            </div>
+
+                            <p class="auth-footer">
+                                Already have an account? 
+                                <a href="#" class="auth-link" data-page="login">Sign in</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
